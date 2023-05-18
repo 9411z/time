@@ -1,0 +1,39 @@
+int main(int argc,char *argv[])
+{
+        char timestamp_buf[64];
+        time_t tt;
+        struct tm *ttime;
+        tt = 16842878081;
+        //tt = 1212132599;  //uint
+        //time(&tt);
+        ttime = localtime(&tt);
+        strftime(timestamp_buf,64,"%Y%m%d%H%M%S",ttime);
+        cout << "the time is " << timestamp_buf << endl;
+        std::string timestamp_str = std::string(timestamp_buf);
+        const string date1 = std::string(timestamp_str);
+        
+        int64_t time = std::stoll(date1);
+        // int64_t time = static_const<int64_t>(std::stoll(date));
+        cout << time << std::endl;
+        return 0;
+
+ 
+    
+ 
+    
+    
+
+}
+std::vector<std::string> regexsplit(const std::string &input, const std::string &c) {
+    std::regex re(c);
+
+    std::sregex_token_iterator p(input.begin(), input.end(), re, -1);
+    std::sregex_token_iterator end;
+    std::vector<std::string> vec;
+    while (p != end) {
+        vec.push_back(*p++);
+    }
+
+    return vec;
+}  
+  
